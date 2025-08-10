@@ -39,7 +39,7 @@ const AboutUs = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            {/* Hero Section */}
+
             <motion.section
                 className="max-w-6xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10"
                 initial={{ y: 50, opacity: 0 }}
@@ -73,7 +73,6 @@ const AboutUs = () => {
                 </motion.div>
             </motion.section>
 
-            {/* Mission & Vision */}
             <section className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8">
                 {[
                     {
@@ -99,7 +98,6 @@ const AboutUs = () => {
                 ))}
             </section>
 
-            {/* Team Section */}
             <section className="max-w-6xl mx-auto px-4 py-16 text-center">
                 <motion.h2
                     className="text-3xl font-bold text-gray-800 mb-12"
@@ -143,7 +141,6 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            {/* Footer Quote */}
             <motion.section
                 className="max-w-6xl mx-auto py-12 mt-16 shadow-2xl rounded-2xl"
                 initial={{ opacity: 0, y: 30 }}
