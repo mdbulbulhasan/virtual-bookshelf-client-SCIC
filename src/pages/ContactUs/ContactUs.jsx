@@ -1,12 +1,73 @@
-import React from "react";
+import React, {useState} from "react";
 import Lottie from "lottie-react";
 import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
 import contactAnimation from "../../assets/lottieAnimation/contactus.json";
+import Swal from "sweetalert2";
 
 const ContactUs = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const { name, email, message } = formData;
+
+
+        if (!name || !email || !message) {
+            Swal.fire({
+                icon: "error",
+                title: "Missing Fields",
+                text: "Please fill out all fields before submitting.",
+            });
+            return;
+        }
+
+        // Email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            Swal.fire({
+                icon: "error",
+                title: "Invalid Email",
+                text: "Please enter a valid email address.",
+            });
+            return;
+        }
+
+
+        console.log("Form Submitted:", formData);
+
+
+        Swal.fire({
+            icon: "success",
+            title: "Message Sent!",
+            text: "We will get back to you soon.",
+            timer: 3000,
+            showConfirmButton: false,
+        });
+
+
+        setFormData({
+            name: "",
+            email: "",
+            message: "",
+        });
+    };
     return (
         <div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-white">
-            {/* Hero Section */}
+
             <section className="max-w-6xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
                 <div className="flex-1 space-y-6">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
@@ -18,7 +79,7 @@ const ContactUs = () => {
                         Fill out the form or use the contact details below to reach out.
                     </p>
 
-                    {/* Contact Info */}
+
                     <div className="space-y-4">
                         <p className="flex items-center gap-3 text-gray-700">
                             <FaEnvelope className="text-yellow-500" /> support@bookshelf.com
@@ -55,20 +116,25 @@ const ContactUs = () => {
                     </div>
                 </div>
 
-                {/* Animation */}
                 <div className="flex-1">
                     <Lottie animationData={contactAnimation} loop={true} />
                 </div>
             </section>
 
-            {/* Contact Form */}
+
             <section className="max-w-4xl mx-auto px-4 pb-16">
-                <form className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+                <form
+                    onSubmit={handleSubmit}
+                    className="bg-white rounded-2xl shadow-lg p-8 space-y-6"
+                >
                     <div>
                         <label className="block mb-2 font-semibold text-gray-700">Name</label>
                         <input
                             type="text"
+                            name="name"
                             placeholder="Your full name"
+                            value={formData.name}
+                            onChange={handleChange}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                         />
                     </div>
@@ -76,7 +142,10 @@ const ContactUs = () => {
                         <label className="block mb-2 font-semibold text-gray-700">Email</label>
                         <input
                             type="email"
+                            name="email"
                             placeholder="Your email address"
+                            value={formData.email}
+                            onChange={handleChange}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                         />
                     </div>
@@ -84,7 +153,10 @@ const ContactUs = () => {
                         <label className="block mb-2 font-semibold text-gray-700">Message</label>
                         <textarea
                             rows="5"
+                            name="message"
                             placeholder="Write your message..."
+                            value={formData.message}
+                            onChange={handleChange}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                         ></textarea>
                     </div>
