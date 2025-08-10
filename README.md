@@ -2,7 +2,7 @@
 
 Welcome to **Bookshelf**, a web app designed for book lovers who want to keep their reading organized, discover what others are reading, and track progress — all in one place.
 
- **Live Site:** [bookshelf-793eb.web.app](https://bookshelf-793eb.web.app)  
+ **Live Site:** [(https://bookshelf-793eb.web.app)](https://bookshelf-793eb.web.app)  
 
 ---
 
