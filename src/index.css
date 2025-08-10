@@ -1,0 +1,222 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: blue;
+  --color-secondary: teal;
+  --color-background: #f4f1ea;
+}
+/* Force synthwave background overrides for DaisyUI-like components */
+
+/* Page background */
+html.synthwave, html.synthwave body {
+  background-color: #1e1e2f !important;
+  color: white!important;
+}
+
+/* Form container background (bg-base-100 / card) */
+html.synthwave .bg-base-100,
+html.synthwave .card,
+html.synthwave .card-body,
+html.synthwave fieldset {
+  background-color: #2a2a40 !important;
+  color: white !important;
+  border-color: #3f3f5e !important;
+}
+
+/* Hero section background (bg-base-200) */
+html.synthwave .bg-base-200 {
+  background-color: #292942 !important;
+}
+
+/* Input fields */
+html.synthwave input,
+html.synthwave textarea,
+html.synthwave select {
+  background-color: #2a2a40 !important;
+  color: #e0e0e0 !important;
+  border-color: #3f3f5e !important;
+}
+
+/* Placeholder text */
+html.synthwave input::placeholder,
+html.synthwave textarea::placeholder {
+  color: #a0a0c0 !important;
+}
+
+/* Optional: Buttons */
+html.synthwave .btn {
+  background-color: #5e60ce !important;
+  color: white !important;
+}
+
+/* Optional: Link Hover */
+html.synthwave a:hover {
+  color: #b4b4ff !important;
+}
+html.synthwave footer {
+  background: linear-gradient(to right, #1e1e2f, #292942) !important;
+}
+/* Call to Action section background for default theme */
+.cta-section {
+  background: linear-gradient(to right, #fef3c7, #fbcfe8); /* from-yellow-100 to-pink-100 */
+  color: #1f2937; /* default text-gray-800 */
+}
+
+/* Dark mode or synthwave theme override */
+html.dark .cta-section,
+html.synthwave .cta-section {
+  background: linear-gradient(to right, #374151, #4b5563); /* from-gray-700 to-gray-600 or your preferred dark colors */
+  color: #e5e7eb; /* text-gray-200 */
+}
+/* Default (light theme) */
+.testimonials-section {
+  color: #374151; /* text-gray-700 */
+}
+
+/* Dark or synthwave theme overrides */
+html.dark .testimonials-section,
+html.synthwave .testimonials-section {
+  color: #e0e0e0; /* lighter text */
+}
+
+/* Override blockquote text colors to suit dark mode */
+html.dark .testimonials-section blockquote,
+html.synthwave .testimonials-section blockquote {
+  color: #d1d5db; /* lighter gray */
+  border-color: #6366f1; /* softer border color for blue-green */
+}
+
+/* You can customize border colors for dark mode: */
+html.dark .testimonials-section blockquote.border-blue-500 {
+  border-color: #6366f1; /* indigo-500 */
+}
+
+html.dark .testimonials-section blockquote.border-green-500 {
+  border-color: #34d399; /* green-400 */
+}
+/* Default (light) theme text colors can remain Tailwind defaults */
+
+/* Dark theme or synthwave theme text overrides */
+html.dark .animation-section h1,
+html.synthwave .animation-section h1 {
+  color: #ffffff; /* pure white heading */
+}
+
+html.dark .animation-section p,
+html.synthwave .animation-section p {
+  color: #d1d5db; /* lighter gray for paragraph */
+}
+
+html.dark .animation-section a,
+html.synthwave .animation-section a {
+  color: #3b82f6; /* blue-500 for link text */
+}
+/* Featured Categories default (light theme) */
+.featured-categories .category-card {
+  background: linear-gradient(to right, #ede9fe, #c7d2fe); /* purple-100 to indigo-100 */
+  color: #1f2937; /* gray-800 text */
+}
+
+.featured-categories .category-card h3 {
+  color: #1f2937; /* gray-800 */
+}
+
+.featured-categories .category-card .description {
+  color: #4b5563; /* gray-700 */
+}
+
+/* Dark theme or synthwave theme */
+html.dark .featured-categories .category-card,
+html.synthwave .featured-categories .category-card {
+  background: linear-gradient(to right, #374151, #1f2937); /* dark gray gradients */
+  color: #ffffff; /* white text */
+}
+
+html.dark .featured-categories .category-card h3,
+html.synthwave .featured-categories .category-card h3 {
+  color: #ffffff; /* white heading */
+}
+
+html.dark .featured-categories .category-card .description,
+html.synthwave .featured-categories .category-card .description {
+  color: #d1d5db; /* gray-300 for paragraph text */
+}
+/* Popular Books - default (light theme) */
+.popular-books .book-card {
+  color: #1f2937; /* gray-800 for general text */
+}
+
+.popular-books .book-title {
+  color: #1f2937; /* gray-800 */
+}
+
+.popular-books .book-author {
+  color: #4b5563; /* gray-700 */
+}
+
+.popular-books .book-upvote {
+  color: #6b7280; /* gray-500 */
+}
+
+/* Dark theme or synthwave theme */
+html.dark .popular-books .book-card,
+html.synthwave .popular-books .book-card {
+  color: #ffffff; /* white text in dark mode */
+}
+
+html.dark .popular-books .book-title,
+html.synthwave .popular-books .book-title {
+  color: #ffffff;
+}
+
+html.dark .popular-books .book-author,
+html.synthwave .popular-books .book-author,
+html.dark .popular-books .book-upvote,
+html.synthwave .popular-books .book-upvote {
+  color: #d1d5db; /* gray-300 for lighter text */
+}
+/* BookShelf text color for light theme (default) */
+.bookshelf-page {
+  color: #1f2937; /* gray-800 */
+}
+
+/* Override specific text if needed */
+.bookshelf-page h2,
+.bookshelf-page h3 {
+  color: #1f2937; /* headings darker */
+}
+
+.bookshelf-page p {
+  color: #4b5563; /* paragraph text gray-700 */
+}
+
+/* Dark or synthwave theme */
+html.dark .bookshelf-page,
+html.synthwave .bookshelf-page {
+  color: #ffffff; /* white text in dark/synthwave */
+}
+
+html.dark .bookshelf-page h2,
+html.synthwave .bookshelf-page h2,
+html.dark .bookshelf-page h3,
+html.synthwave .bookshelf-page h3 {
+  color: #ffffff;
+}
+
+html.dark .bookshelf-page p,
+html.synthwave .bookshelf-page p {
+  color: #d1d5db; /* gray-300 for readability */
+}
+:root {
+  --menu-bg: white;
+  --menu-text: black;
+}
+
+.synthwave {
+  --menu-bg: white; /* adjust to match your synthwave bg */
+  --menu-text: white;
+}
