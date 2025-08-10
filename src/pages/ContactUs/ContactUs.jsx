@@ -1,6 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Lottie from "lottie-react";
-import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
+import { motion } from "framer-motion";
+import {
+    FaFacebook,
+    FaLinkedin,
+    FaGithub,
+    FaEnvelope,
+    FaPhone,
+} from "react-icons/fa";
 import contactAnimation from "../../assets/lottieAnimation/contactus.json";
 import Swal from "sweetalert2";
 
@@ -11,7 +18,6 @@ const ContactUs = () => {
         message: "",
     });
 
-
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -19,12 +25,9 @@ const ContactUs = () => {
         });
     };
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const { name, email, message } = formData;
-
 
         if (!name || !email || !message) {
             Swal.fire({
@@ -35,7 +38,6 @@ const ContactUs = () => {
             return;
         }
 
-        // Email format validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             Swal.fire({
@@ -46,9 +48,7 @@ const ContactUs = () => {
             return;
         }
 
-
         console.log("Form Submitted:", formData);
-
 
         Swal.fire({
             icon: "success",
@@ -58,27 +58,36 @@ const ContactUs = () => {
             showConfirmButton: false,
         });
 
-
         setFormData({
             name: "",
             email: "",
             message: "",
         });
     };
-    return (
-        <div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-white">
 
+    return (
+        <motion.div
+            className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-white"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+            {/* Contact Info + Animation */}
             <section className="max-w-6xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
-                <div className="flex-1 space-y-6">
+                <motion.div
+                    className="flex-1 space-y-6"
+                    initial={{ x: -50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                >
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
                         Get in <span className="text-black">Touch</span>
                     </h1>
                     <p className="text-gray-600 text-lg leading-relaxed">
                         Have questions, suggestions, or just want to say hello?
-                        We’d love to hear from you!
-                        Fill out the form or use the contact details below to reach out.
+                        We’d love to hear from you! Fill out the form or use the contact
+                        details below to reach out.
                     </p>
-
 
                     <div className="space-y-4">
                         <p className="flex items-center gap-3 text-gray-700">
@@ -114,15 +123,25 @@ const ContactUs = () => {
                             </a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex-1">
+                <motion.div
+                    className="flex-1"
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                >
                     <Lottie animationData={contactAnimation} loop={true} />
-                </div>
+                </motion.div>
             </section>
 
-
-            <section className="max-w-6xl mx-auto px-4 pb-16">
+            {/* Contact Form */}
+            <motion.section
+                className="max-w-6xl mx-auto px-4 pb-16"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+            >
                 <form
                     onSubmit={handleSubmit}
                     className="bg-white rounded-2xl shadow-lg p-8 space-y-6"
@@ -167,8 +186,8 @@ const ContactUs = () => {
                         Send Message
                     </button>
                 </form>
-            </section>
-        </div>
+            </motion.section>
+        </motion.div>
     );
 };
 
