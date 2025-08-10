@@ -122,7 +122,7 @@ const ContactUs = () => {
             </section>
 
 
-            <section className="max-w-4xl mx-auto px-4 pb-16">
+            <section className="max-w-6xl mx-auto px-4 pb-16">
                 <form
                     onSubmit={handleSubmit}
                     className="bg-white rounded-2xl shadow-lg p-8 space-y-6"
