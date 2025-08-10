@@ -42,7 +42,8 @@ const AboutUs = () => {
           </span>
                     </h1>
                     <p className="text-gray-600 text-lg leading-relaxed">
-                        Book<span className="text-yellow-500">SHELF</span> is a modern platform for book lovers to discover, share, and
+                        Book<span className="text-yellow-500">SHELF</span> is a modern platform for book lovers to
+                        discover, share, and
                         organize their favorite reads. We believe in the power of stories and aim to
                         connect people through literature.
                     </p>
@@ -91,13 +92,22 @@ const AboutUs = () => {
                             <h3 className="mt-4 text-xl font-semibold text-gray-800">{member.name}</h3>
                             <p className="text-yellow-500">{member.role}</p>
                             <div className="flex gap-4 mt-4 text-gray-500">
-                                <a href={member.fb} className="hover:text-yellow-500">
+                                <a href={member.fb}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="hover:text-yellow-500">
                                     <FaFacebook size={20}/>
                                 </a>
-                                <a href={member.li} className="hover:text-yellow-500">
+                                <a href={member.li}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="hover:text-yellow-500">
                                     <FaLinkedin size={20}/>
                                 </a>
-                                <a href={member.gh} className="hover:text-yellow-500">
+                                <a href={member.gh}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="hover:text-yellow-500">
                                     <FaGithub size={20}/>
                                 </a>
                             </div>
