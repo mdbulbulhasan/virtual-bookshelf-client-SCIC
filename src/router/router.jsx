@@ -13,6 +13,7 @@ import UpdateBook from "../pages/UpdateBook/UpdateBook";
 import NotFound from "../pages/NotFound/NotFound";
 import PrivateRoute from "../context/PrivateRoute";
 import AboutUs from "../pages/AboutUs/AboutUs.jsx";
+import ContactUs from "../pages/ContactUs/ContactUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/books/:id",

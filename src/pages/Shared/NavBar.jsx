@@ -89,6 +89,19 @@ const NavBar = () => {
           About US
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/contactus"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold text-blue-600 border-b-2 border-blue-600 pb-1 transition-all duration-200"
+              : "text-gray-700 hover:text-blue-500 transition-all duration-200"
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
       {user ? (
         <>
           <li>
