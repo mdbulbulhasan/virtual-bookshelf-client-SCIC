@@ -6,25 +6,25 @@ import aboutAnimation from "../../assets/lottieAnimation/aboutus.json";
 const AboutUs = () => {
     const team = [
         {
-            name: "Bulbul Hasan",
+            name: "Md Bulbul Hasan",
             role: "Founder & Developer",
-            img: "https://via.placeholder.com/150",
+            img: "https://i.ibb.co.com/sDJ5Xhx/Md-Bulbul-Hasan.jpg",
             fb: "#",
             li: "#",
             gh: "#",
         },
         {
-            name: "Sarah Lee",
+            name: "Md Bulbul Hasan",
             role: "UI/UX Designer",
-            img: "https://via.placeholder.com/150",
+            img: "https://i.ibb.co.com/sDJ5Xhx/Md-Bulbul-Hasan.jpg",
             fb: "#",
             li: "#",
             gh: "#",
         },
         {
-            name: "John Smith",
+            name: "Md Bulbul Hasan",
             role: "Backend Engineer",
-            img: "https://via.placeholder.com/150",
+            img: "https://i.ibb.co.com/sDJ5Xhx/Md-Bulbul-Hasan.jpg",
             fb: "#",
             li: "#",
             gh: "#",
